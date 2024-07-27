@@ -41,18 +41,19 @@ func main() {
 		// treats as a SQL Query.
 		if userQuery[0] == '.' {
 			performMetaAction(userQuery)
-		} else {
-			fmt.Println("")
-			q, err := parser.Parse(userQuery)
-
-			if err != nil {
-				// Handle the error
-				os.Exit(1)
-			}
-
-			// Execute the Query
-			fmt.Println(q)
+			continue
 		}
+
+		fmt.Println("")
+		q, err := parser.Parse(userQuery)
+
+		if err != nil {
+			// Handle the error
+			continue
+		}
+
+		// Execute the Query
+		fmt.Println(q)
 	}
 
 }
