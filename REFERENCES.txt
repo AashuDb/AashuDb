@@ -1,0 +1,3 @@
+Postgres Documentation - SQL Parser, https://www.postgresql.org/docs/current/parser-stage.html
+
+Introduction to SQL, Database System Concepts - 7th Edition, A. Silberschatz, et. al., Pg. 65-115
