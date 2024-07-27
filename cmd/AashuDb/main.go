@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/AashuDb/AashuDb/pkg/parser"
 )
 
 func performMetaAction(command string) {
@@ -24,6 +26,8 @@ func main() {
 
 	// Initilaizes an infinite loop for userQuery and reads Input Buffer
 	// till a semicolon(;) is encountered.
+	fmt.Println("\nWelcome To AashuDb Console...")
+	fmt.Println("For help usage use command, .help;")
 	for {
 		reader := bufio.NewReader(os.Stdin)
 		fmt.Println("~~~~~~~")
@@ -39,7 +43,15 @@ func main() {
 			performMetaAction(userQuery)
 		} else {
 			fmt.Println("")
-			fmt.Println(userQuery)
+			q, err := parser.Parse(userQuery)
+
+			if err != nil {
+				// Handle the error
+				os.Exit(1)
+			}
+
+			// Execute the Query
+			fmt.Println(q)
 		}
 	}
 
