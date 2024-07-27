@@ -20,8 +20,8 @@ git clone https://github.com/AashuDb/AashuDb.git
 cd AashuDb
 ```
 
-- Step 3: Run cmd/AashuDb/main.go
+- Step 3: Run main.go
 
 ```bash
-go run cmd/AashuDb/main.go
+go run main.go
 ```
